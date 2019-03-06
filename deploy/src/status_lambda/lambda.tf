@@ -3,7 +3,7 @@ locals {
 }
 
 resource "aws_s3_bucket" "lambda" {
-  bucket = "prm-${data.aws_caller_identity.current.account_id}-status-lambda-${var.environment}"
+  bucket = "prm-${data.aws_caller_identity.current.account_id}-status-lambda-${lower(var.environment)}"
   acl    = "private"
 }
 
