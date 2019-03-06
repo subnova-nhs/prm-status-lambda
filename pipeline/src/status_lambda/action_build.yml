@@ -1,0 +1,10 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - make build
+artifacts:
+  files:
+    - lambda/status/lambda.zip
+    - lambda/status/prod_dep/**/*
