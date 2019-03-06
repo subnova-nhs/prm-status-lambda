@@ -2,7 +2,7 @@
 
 
 [[projects]]
-  digest = "1:57f04762e41695048ea2c5e40ee06b8f00c7f47b5c105a9cb1c9473470e97ebb"
+  digest = "1:f7d87534782813b925f7297f89e598e0b6d4eeec97f81aadf8ab09e755d9db6e"
   name = "github.com/aws/aws-sdk-go"
   packages = [
     "aws",
@@ -36,24 +36,25 @@
     "service/sts",
   ]
   pruneopts = "UT"
-  revision = "3248e106c35aafb9b982f5d086f0150faf24ee4e"
-  version = "v1.17.6"
+  revision = "754d07f5dfb0a42be29df8da4a5428a321377cb3"
+  version = "v1.17.11"
 
 [[projects]]
-  digest = "1:ffe9824d294da03b391f44e1ae8281281b4afc1bdaa9588c9097785e3af10cec"
-  name = "github.com/davecgh/go-spew"
-  packages = ["spew"]
+  digest = "1:582b704bebaa06b48c29b0cec224a6058a09c86883aaddabde889cd1a5f73e1b"
+  name = "github.com/google/uuid"
+  packages = ["."]
   pruneopts = "UT"
-  revision = "8991bc29aa16c548c550c7ff78260e27b9ab7c73"
+  revision = "0cd6bf5da1e1c83f8b45653022c74f71af0538a4"
   version = "v1.1.1"
 
 [[projects]]
-  digest = "1:0198ff5d45c9767f5c38409b9aa25f58b139bcff4f8032d827e177095952e279"
+  digest = "1:177f1d20b32b6709474676ea0110cd3e2f2f3c25fda56e7d615e91acc5821d2d"
   name = "github.com/gruntwork-io/terratest"
   packages = [
     "modules/collections",
     "modules/customerrors",
     "modules/files",
+    "modules/http-helper",
     "modules/logger",
     "modules/random",
     "modules/retry",
@@ -62,8 +63,8 @@
     "modules/terraform",
   ]
   pruneopts = "UT"
-  revision = "b6077c8c1ecfd290ee1f37e1e51472a34d30cb38"
-  version = "v0.13.29"
+  revision = "06f1145556f034f008e635bea32ed9555985d596"
+  version = "v0.13.30"
 
 [[projects]]
   digest = "1:bb81097a5b62634f3e9fec1014657855610c82d19b9a40c17612e32651e35dca"
@@ -73,24 +74,8 @@
   revision = "c2b33e84"
 
 [[projects]]
-  digest = "1:0028cb19b2e4c3112225cd871870f2d9cf49b9b4276531f03438a88e94be86fe"
-  name = "github.com/pmezard/go-difflib"
-  packages = ["difflib"]
-  pruneopts = "UT"
-  revision = "792786c7400a136282c1664665ae0a8db921c6c2"
-  version = "v1.0.0"
-
-[[projects]]
-  digest = "1:972c2427413d41a1e06ca4897e8528e5a1622894050e2f527b38ddf0f343f759"
-  name = "github.com/stretchr/testify"
-  packages = ["assert"]
-  pruneopts = "UT"
-  revision = "ffdc059bfe9ce6a4e144ba849dbedead332c6053"
-  version = "v1.3.0"
-
-[[projects]]
   branch = "master"
-  digest = "1:a8db4606eb5cbc62ca3dc199d0ede45433da7214c1cca128f5cf6c40e28496e3"
+  digest = "1:fe4ea207179d7d9eeaebf545b47b750e39ba7590f01bb8d966342b4f821f26d7"
   name = "golang.org/x/crypto"
   packages = [
     "curve25519",
@@ -103,7 +88,7 @@
     "ssh/agent",
   ]
   pruneopts = "UT"
-  revision = "7f87c0fbb88b590338857bcb720678c2583d4dea"
+  revision = "8dd112bcdc25174059e45e07517d9fc663123347"
 
 [[projects]]
   branch = "master"
@@ -111,7 +96,15 @@
   name = "golang.org/x/net"
   packages = ["context"]
   pruneopts = "UT"
-  revision = "fe579d43d83210096a79b46dcca0e3721058393a"
+  revision = "16b79f2e4e95ea23b2bf9903c9809ff7b013ce85"
+
+[[projects]]
+  branch = "master"
+  digest = "1:f05f63172c98e8e485809dde9cd75921846e08ea8c35bb8bc63040384d9f3c6d"
+  name = "golang.org/x/sys"
+  packages = ["cpu"]
+  pruneopts = "UT"
+  revision = "a98ae47d97a5abb3a3e9045da36315f9f8312970"
 
 [solve-meta]
   analyzer-name = "dep"
@@ -119,9 +112,10 @@
   input-imports = [
     "github.com/aws/aws-sdk-go/aws/session",
     "github.com/aws/aws-sdk-go/service/sts",
+    "github.com/google/uuid",
+    "github.com/gruntwork-io/terratest/modules/http-helper",
     "github.com/gruntwork-io/terratest/modules/random",
     "github.com/gruntwork-io/terratest/modules/terraform",
-    "github.com/stretchr/testify/assert",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1

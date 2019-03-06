@@ -1,8 +1,6 @@
-.PHONY : build clean test funtest	
+.PHONY : build test	clean
 
-account_id := $(shell aws sts get-caller-identity |  jq -r .Account)
-
-source = main.js constants.js
+source = main.js
 
 build : lambda.zip
 
@@ -21,14 +19,5 @@ prod_dep/node_modules : package.json
 test : node_modules *.js
 	npm test
 
-terratest : lambda.zip
-	$(MAKE) -C ../../deploy/test/status_lambda
-
 clean :
 	rm -rf node_modules prod_dep lambda.zip
-
-deploy-% : build test
-	$(MAKE) -C ../../deploy/$*-$(account_id)/status_lambda apply
-
-update-% : build test
-	$(MAKE) -C ../../deploy/$*-$(account_id)/status_lambda update

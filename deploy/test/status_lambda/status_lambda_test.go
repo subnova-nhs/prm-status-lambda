@@ -43,7 +43,7 @@ func loadFile(t *testing.T, name string) []byte {
 
 func TestStatusLambdaDeploy(t *testing.T) {
 	// setup the  test fixture
-	accountId := getAccountID(t)
+	accountID := getAccountID(t)
 	environmentName := generateEnvironmentName()
 
 	preSetupOptions := &terraform.Options{
